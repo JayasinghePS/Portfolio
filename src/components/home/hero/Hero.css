@@ -1,0 +1,59 @@
+.hero {
+    position: relative;
+    background-color: #100247;
+    height: 100vh;
+    width: 100%;
+}
+
+.shapes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.vec1, .vec2, .me {
+    position: absolute;
+    bottom: 0;
+}
+
+.vec1 {
+    width: 53%;
+    height: 400%;
+    left: 26%;
+    transform: translateX(-50%);
+}
+
+.vec2 {
+    width: 38%;
+    height: 500%;
+    left: 62%;
+}
+
+.me {
+    width: 31%;
+    height: 450%;
+    left: 36%;
+}
+
+.professions {
+    position: absolute;
+    top: -150%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+
+  .name {
+    position: absolute;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 41px;
+  }
