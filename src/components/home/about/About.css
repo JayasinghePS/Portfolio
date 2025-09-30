@@ -1,10 +1,181 @@
 .about {
     height: 100vh;
     width: 100%;
+    padding: 40px;
+    text-align: center;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 130px; /* space between columns */
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.about-photo {
+  position: relative;
+  width: 420px;              /* slightly bigger than image */
+  height: 420px;
+  display: flex;             /* centers image inside */
+  align-items: center;
+  justify-content: center;
+  background-color: #08ebeb; /* 👈 background color for box */
+  border-radius: 50%;        /* keeps it circular */
+  padding: 10px;             /* space around image */
+  box-shadow: 0 4px 10px rgba(27, 0, 204, 0.4);
+  overflow: hidden; 
+}
+
+.about-photo img {
+  margin-left: -40px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%; /* makes photo circular */
+  object-fit: cover;
+ /* box-shadow: 0 4px 10px rgba(27, 0, 204, 0.722); */
+}
+
+/* 👇 overlay shape */
+.about-photo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(90deg, #f312fb, #a21cfc);
+  clip-path: ellipse(70% 50% at 50% 100%);
+  z-index: 2;
+}
+
+
+
+
+.about-description {
+  max-width: 500px;
+  text-align: left;
+  font-size: 1.1rem;
+  margin-top: -4%;
+}
+
+/* Hi! */
+.intro-hi {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;                 /* remove default spacing */
+  animation: fadeInDown 1s ease-out;
+  background: linear-gradient(90deg, #ec53d0 0%, #288e8e 60%);
+  
+}
+
+/* Name */
+.intro-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 9px 0 15px 0;
+
+  /* Gradient text */
+  background: linear-gradient(90deg,  #05ffff,  #ec53d0);
+
+  /* Standard property */
+  background-clip: text;
+
+  /* Vendor prefix for WebKit (Chrome, Safari, Edge) */
+  -webkit-background-clip: text;
+
+  /* Fill text with background instead of color */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Paragraph */
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* buttons */
+.intro-buttons {
+  display: flex;
+  gap: 20px;          /* space between buttons */
+  margin-top: 20px;
+}
+
+/* Common button style */
+.intro-buttons button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8%;
+}
+
+/* Download CV button (gradient + slide animation) */
+.intro-cvbutton {
+  background: transparent;
+  color: #e464cd;
+
+  border: 3px solid #e464cd;
+  padding: 12px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.intro-cvbutton:hover {
+  background: #e464cd;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgb(233, 53, 249);
+}
+
+/* Contact Me button (outline with hover fill) */
+.intro-contactbutton {
+  background: transparent;
+  color: #288e8e;
+
+  border: 3px solid #288e8e;
+  padding: 12px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.intro-contactbutton:hover {
+  background: #288e8e;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(24, 239, 225, 0.981);
 }
