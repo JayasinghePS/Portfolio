@@ -24,7 +24,7 @@ function About() {
           A passionate software engineer who loves 
           building scalable web applications and exploring new technologies. 
           I enjoy working on both frontend and backend, and I’m always curious 
-          to learn more and improve my skills.
+          to learn more and improve my skills. -- yes and no--
         </p>
         <div className="intro-buttons">
         <button className='intro-cvbutton'>Download CV</button>
