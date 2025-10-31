@@ -69,11 +69,12 @@ body {
 /* Hi! */
 .intro-hi {
   display: inline-block;
+  color: white;
   font-size: 2rem;
   font-weight: 500;
   margin: 0;                 /* remove default spacing */
   animation: fadeInDown 1s ease-out;
-  background: linear-gradient(90deg, #ec53d0 0%, #288e8e 60%);
+  background: linear-gradient(90deg, #ff61e2 0%, #2d9b9b 60%);
   
 }
 

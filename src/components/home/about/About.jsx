@@ -4,8 +4,8 @@ import "./About.css"
 function About() {
   return (
     <>
-        <section className='about'>
-        <h1>About</h1>
+      <section className='about'>
+      <h1>About</h1>
       <div className="about-container">
         {/* Left Column - Photo */}
         <div className="about-photo">
@@ -24,7 +24,7 @@ function About() {
           A passionate software engineer who loves 
           building scalable web applications and exploring new technologies. 
           I enjoy working on both frontend and backend, and I’m always curious 
-          to learn more and improve my skills. -- yes and no--
+          to learn more and improve my skills.
         </p>
         <div className="intro-buttons">
         <button className='intro-cvbutton'>Download CV</button>
