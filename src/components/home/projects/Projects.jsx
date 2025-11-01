@@ -1,9 +1,16 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./Projects.css"
 import { projects } from "../../data/data.js"
 
 function Projects() {
+
+  const [projectIndex, setProjectIndex] = useState(0);
+
   const projectListRef = useRef(null);
+
+  const selectTheProject = (index)=>{
+    setProjectIndex(index);
+  };
 
   useEffect(() => {
     const el = projectListRef.current;
@@ -32,7 +39,7 @@ function Projects() {
     <div className='leftbottom-allprojects'>
     <div className='projectlist' ref={projectListRef}>
       {projects.map((item, index) => (
-              <div  className='box' key={index}>
+              <div  className='box' key={index} onMouseEnter={() => selectTheProject(index)}>
                 <img src={item.cover} alt='not showing' />
                     <h5>{item.name}</h5>                
               </div>
@@ -42,7 +49,17 @@ function Projects() {
     </div>
 
     <div className='right-selectedproject'>
-    <p>gggggg</p>
+    <div className='selectedproject'>
+      <div className='selectedproject-images'>
+        <img src={projects[projectIndex].cover} alt='not showing' />               
+      </div>
+      <div className='selectedproject-namedescription'>
+       <p>{projects[projectIndex].name}</p>  
+      </div>
+      <div className='selectedproject-techstack'>
+       <p>{projects[projectIndex].name}</p>     
+      </div>
+    </div>
     </div>
     </div>
     </section>
