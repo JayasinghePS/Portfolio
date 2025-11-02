@@ -89,7 +89,16 @@ border:solid;
 border-radius: 10px;
 height: 60%;
 width: 110%;
+position: relative;
+display: inline-block;
 }
+
+.selectedproject-images:hover .img-btn,
+.selectedproject-images:hover .image-dots {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 
 .selectedproject-images img{
@@ -109,4 +118,51 @@ border:solid;
 border-radius: 10px;
 height: 20%;
 width: 110%;
+}
+
+.img-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 45%; /* distance from top */
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor:pointer;
+}
+
+.left-btn{
+  left: 2%;
+}
+
+.right-btn{
+  right: 2%;
+}
+.image-dots {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease;
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dot.active {
+  background: #fff;
+  transform: scale(1.2);
 }
