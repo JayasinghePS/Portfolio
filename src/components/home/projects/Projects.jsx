@@ -67,8 +67,8 @@ function Projects() {
     
     <div className='project-area-left'>
     <div className='lefttop-topic'>
-     <h1>Projects</h1>
-     <p>gggggggggggggggggggggggggggggggggggggggggggg</p>
+     <h1 className='project-title'>Projects</h1>
+     <p>Welcome to my project space - a collection of ideas brought to life through code, design, and experimentation. Here you’ll find everything from research-driven builds to practical tools, each created to challenge my skills and explore new possibilities in technology.</p>
     </div>
     <div className='leftbottom-allprojects'>
     <div className='projectlist' ref={projectListRef}>
@@ -107,7 +107,8 @@ function Projects() {
                
       </div>
       <div className='selectedproject-namedescription'>
-       <p>{projects[projectIndex].name}</p>  
+       <h3>{projects[projectIndex].name}</h3>  
+       <p>{projects[projectIndex].description}</p>
       </div>
       <div className='selectedproject-techstack'>
        <p>{projects[projectIndex].name}</p>     
