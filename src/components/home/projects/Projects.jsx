@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./Projects.css"
 import { projects } from "../../data/data.js"
+import * as motion from "motion/react-client"
 
 function Projects() {
 
@@ -67,23 +68,27 @@ function Projects() {
     
     <div className='project-area-left'>
     <div className='lefttop-topic'>
-     <h1>Projects</h1>
-     <p>gggggggggggggggggggggggggggggggggggggggggggg</p>
+     <h1 className='project-title'>Projects</h1>
+     <p>Welcome to my project space - a collection of ideas brought to life through code, design, and experimentation. Here you’ll find everything from research-driven builds to practical tools, each created to challenge my skills and explore new possibilities in technology.</p>
     </div>
     <div className='leftbottom-allprojects'>
     <div className='projectlist' ref={projectListRef}>
       {projects.map((item, index) => (
-              <div  className='box' key={index}  
+              <motion.div  className='box' key={index} 
+              whileHover={{ scale: 1.08}}
+              whileTap={{ scale: 0.95 }} 
               onMouseEnter={() => {
               if (hoverEnabled) selectTheProject(index);
               }}
               onClick={() => {
                 selectTheProject(index);
                 setHoverEnabled(false); // disable hover after clicking
-              }} >
+              }} 
+               transition={{ type: "spring", stiffness: 300, damping: 15 }}
+               >
                 <img src={item.img_1} alt='not showing' />
                     <h5>{item.name}</h5>                
-              </div>
+              </motion.div>
             ))}
     </div>
     </div>
@@ -107,10 +112,11 @@ function Projects() {
                
       </div>
       <div className='selectedproject-namedescription'>
-       <p>{projects[projectIndex].name}</p>  
+       <h3>{projects[projectIndex].name}</h3>  
+       <p>{projects[projectIndex].description}</p>
       </div>
       <div className='selectedproject-techstack'>
-       <p>{projects[projectIndex].name}</p>     
+       <p>Tech stack: {projects[projectIndex].techstack}</p>     
       </div>
     </div>
     </div>
