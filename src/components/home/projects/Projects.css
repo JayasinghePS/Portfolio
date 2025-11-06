@@ -1,6 +1,7 @@
 .projects {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    overflow-y: visible;
 }
 
 html,
@@ -16,6 +17,7 @@ body {
   margin-top: 20px;
   margin-left: 1%;
   margin-right: 1%;
+  overflow: visible;
 }
 
 .project-area-left{
@@ -25,6 +27,7 @@ body {
   width: 50%;
   padding: 0.5%;
   height: 100%;
+  overflow: visible;
 }
 
 .lefttop-topic {
@@ -34,7 +37,7 @@ body {
 }
 
 .project-title {
-  font-size: 200px;
+  font-size: 180px;
   font-weight: 800;
   line-height: 1;
   margin-top: -5%;
@@ -54,7 +57,9 @@ body {
 .leftbottom-allprojects{
   height: 60vh;
   /* width: 100%; */
-  overflow: hidden;
+  /* overflow-y: visible;
+  overflow-x:auto; */
+  overflow: visible;
   padding-right: 2%;
   margin-top: 10%;
   margin-bottom: 40px;
@@ -76,8 +81,10 @@ body {
 .projectlist {
   display: flex;
   width: 100%;
-  gap: 10px;
-  overflow-x:auto;
+  gap: 14px;
+  overflow-y: visible;
+  overflow-x:hidden;
+  /* overflow: visible; */
   white-space: nowrap;
 
     /* hide scrollbar visually */
@@ -92,28 +99,33 @@ body {
 .box {
   text-align: center;
   flex: 0 0 auto;
+  cursor: pointer;
+  z-index: 1;
+  margin-top: 2%;
+}
+
+.box:hover {
+  z-index: 10;
 }
 
 .selectedproject{
   display: flex;
   flex-direction: column;
-  border:solid;
-  border-radius: 10px;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding: 5% 8%;
   align-items: center;
-  height: 70vh;
+  height: 75vh;
 }
 
 .selectedproject-images{
-border:solid;
-border-radius: 10px;
-height: 60%;
-width: 110%;
+height: 75vh;
+width: 118%;
 position: relative;
-display: inline-block;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden; /* hides cropped parts */
+border-radius: 8px;
+margin-top: -5%;
 }
 
 .selectedproject-images:hover .img-btn,
@@ -125,22 +137,30 @@ display: inline-block;
 
 
 .selectedproject-images img{
-height: 100%;
-width: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* fills box without stretching */
+  object-position: center; /* keeps main focus centered */
+  display: block;
+ transition: transform 0.3s ease;
+}
+.selectedproject-namedescription{
+  height: 35%;
+  width: 110%;
+  align-items: center;    /* centers h3 and p horizontally */
+  justify-content: center; /* centers them vertically */
+  text-align: justify;
 }
 
-.selectedproject-namedescription{
-border:solid;
-border-radius: 10px;
-height: 40%;
-width: 110%;
+.selectedproject-namedescription h3,
+.selectedproject-namedescription p{
+text-align: center;
 }
 
 .selectedproject-techstack{
-border:solid;
-border-radius: 10px;
-height: 20%;
+height: 1%;
 width: 110%;
+margin-top: -2%;
 }
 
 .img-btn {
@@ -155,6 +175,7 @@ width: 110%;
   padding: 8px 12px;
   border-radius: 20px;
   cursor:pointer;
+  z-index: 10;
 }
 
 .left-btn{
