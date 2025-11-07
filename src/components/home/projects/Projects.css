@@ -197,6 +197,7 @@ margin-top: -2%;
   justify-content: center;
   gap: 8px;
   width: 100%;
+  z-index: 8;
 }
 .dot {
   width: 6px;
@@ -209,4 +210,63 @@ margin-top: -2%;
 .dot.active {
   background: #fff;
   transform: scale(1.2);
+}
+
+
+.parallax-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #20232f;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.slopeBegin,
+.slopeEnd {
+  position: absolute;
+  width: 160%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slopeBegin {
+  left: -25%;
+  background-color: #20232f;
+  clip-path: polygon(20% 0, 70% 0, 50% 100%, 0% 100%);
+}
+
+.slopeEnd {
+  right: -25%;
+  clip-path: polygon(70% 0, 100% 0, 80% 100%, 50% 100%);
+  z-index: 1;
+}
+
+.pink {
+  background: linear-gradient(to right, deeppink 0%, coral 100%);
+}
+.teal {
+  background: linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%);
+}
+
+.number-layer {
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  font-size: 120px;
+  color: #cfcfcf77;
+  font-family: 'Kanit', sans-serif;
+  text-transform: uppercase;
+  z-index: 3;
+  pointer-events: none;
 }
