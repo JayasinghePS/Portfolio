@@ -99,7 +99,51 @@ function Projects() {
       <div className='selectedproject-images'>
         <button className='img-btn left-btn' onClick={() => previousImage()}>←</button>
         <button className='img-btn right-btn' onClick={() => nextImage()}>→</button>
-        <img src={projects[projectIndex][`img_${selectedImage}`]} alt='not showing' />
+        {/* <img src={projects[projectIndex][`img_${selectedImage}`]} alt='not showing' /> */}
+
+        {/* parallax layers container */}
+        <div className="parallax-wrapper">
+
+          {/* slopeBegin layer */}
+          <motion.div
+            className="slopeBegin"
+            animate={{ x: [ -50, 0 ], opacity: [0, 1] }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            key={`begin-${selectedImage}`}
+          />
+
+          {/* main image */}
+          <motion.img
+            key={selectedImage}
+            src={projects[projectIndex][`img_${selectedImage}`]}
+            alt="not showing"
+            initial={{ scale: 1.05, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="main-image"
+          />
+
+          {/* slopeEnd layer */}
+          <motion.div
+            className={`slopeEnd ${selectedImage % 2 === 0 ? 'teal' : 'pink'}`}
+            animate={{ x: [50, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            key={`end-${selectedImage}`}
+          />
+
+          {/* number layer */}
+          <motion.div
+            className="number-layer"
+            key={`num-${selectedImage}`}
+            initial={{ y: 50, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <span>{String(selectedImage).padStart(2, '0')}</span>
+          </motion.div>
+        </div>
+
         <div className="image-dots">
           {Array.from({ length: getImageCount() }, (_, i) => (
             <span
@@ -111,7 +155,7 @@ function Projects() {
         </div>
                
       </div>
-      <div className='selectedproject-namedescription'>
+      <div className='selectedproject-namedescription'> 
        <h3>{projects[projectIndex].name}</h3>  
        <p>{projects[projectIndex].description}</p>
       </div>
