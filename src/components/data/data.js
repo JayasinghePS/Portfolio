@@ -36,6 +36,9 @@ export const projects = [
     img_3: "/ProjectBG/ZecretChatApp/bg-3.jpg",
     img_4: "/ProjectBG/ZecretChatApp/bg-4.jpg",
     img_5: "/ProjectBG/ZecretChatApp/bg-5.jpg",
+    img_6: "/ProjectBG/ZecretChatApp/b.jpg",
+    img_7: "/ProjectBG/ZecretChatApp/b.jpg",
+    img_8: "/ProjectBG/ZecretChatApp/b.jpg",
     name: "Zecret Chat App",
     description: "Developed a full-stack real-time chat application that allows users to send and receive messages with real-time message delivery",
     techstack: ""

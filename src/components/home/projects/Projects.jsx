@@ -105,12 +105,12 @@ function Projects() {
         <div className="parallax-wrapper">
 
           {/* slopeBegin layer */}
-          <motion.div
+          {/* <motion.div
             className="slopeBegin"
             animate={{ x: [ -50, 0 ], opacity: [0, 1] }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             key={`begin-${selectedImage}`}
-          />
+          /> */}
 
           {/* main image */}
           <motion.img
@@ -126,12 +126,27 @@ function Projects() {
 
           {/* slopeEnd layer */}
           <motion.div
-            className={`slopeEnd ${selectedImage % 2 === 0 ? 'teal' : 'pink'}`}
+            className={`slopeEnd ${selectedImage % 2 === 0 ? 'teal' : 'purple'}`}
             animate={{ x: [50, 0], opacity: [0, 1] }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             key={`end-${selectedImage}`}
           />
+           {/* <motion.div
+            className={`slopeEnd2 ${selectedImage % 2 === 0 ? 'teal' : 'pink'}`}
+            animate={{ x: [50, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            key={`end-${selectedImage}`}
+          /> */}
+          
 
+          {/* slopeBeginlayer */}
+          <motion.div
+            className={`slopeBegin ${selectedImage % 2 === 0 ? 'purple' : 'teal'}`}
+            animate={{ x: [ -50, 0 ], opacity: [0, 1] }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            key={`begin-${selectedImage}`}
+          />
+          
           {/* number layer */}
           <motion.div
             className="number-layer"
