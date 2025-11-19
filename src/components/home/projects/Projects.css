@@ -129,12 +129,16 @@ margin-top: -5%;
 }
 
 .selectedproject-images:hover .img-btn,
-.selectedproject-images:hover .image-dots {
+.selectedproject-images:hover .image-dots,
+.selectedproject-images:hover .number-layer{
   opacity: 1;
   visibility: visible;
 }
 
-
+.selectedproject-images:hover .slopeBegin{
+  opacity: 0.2;
+  visibility: visible;
+}
 
 .selectedproject-images img{
   height: 100%;
@@ -166,25 +170,101 @@ margin-top: -2%;
 .img-btn {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease;
+  /* transition: opacity 0.5s ease; */
   position: absolute;
   top: 45%; /* distance from top */
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 20px;
+  border-radius: 50px;
   cursor:pointer;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; 
+  width: 45px;   /* make the button a circle */
+  height: 45px;
+  transition: transform 0.25s ease, background 0.25s ease;
+
 }
 
 .left-btn{
   left: 2%;
+  padding-right: 0.5%;
 }
 
 .right-btn{
   right: 2%;
+  padding-left: 0.5%;
 }
+
+.left-btn:hover{
+  transform: translateX(-5px);
+}
+
+.right-btn:hover{
+  transform: translateX(5px);
+}
+
+/* .arrow-icon {
+  transition: transform 0.25s ease;
+} */
+
+.arrow-icon {
+  position: relative;
+}
+
+/* LEFT arrow animation */
+.left-btn:hover .arrow-icon {
+  animation: slide-left 1.2s linear infinite;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  61% {
+    transform: translateX(10px); /* reappear on right side */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* RIGHT arrow animation */
+.right-btn:hover .arrow-icon {
+  animation: slide-right 1.2s linear infinite;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  61% {
+    transform: translateX(-10px); /* reappear on left side */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
 .image-dots {
   opacity: 0;
   visibility: hidden;
@@ -231,7 +311,7 @@ margin-top: -2%;
 }
 
 .slopeBegin,
-.slopeEnd {
+.slopeEnd{
   position: absolute;
   width: 160%;
   height: 100%;
@@ -242,31 +322,51 @@ margin-top: -2%;
 
 .slopeBegin {
   left: -25%;
-  background-color: #20232f;
-  clip-path: polygon(20% 0, 70% 0, 50% 100%, 0% 100%);
+  /* background-color: #20232f; */
+  clip-path: polygon(98% 10%, 90% 0, 80% 100%, 52% 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease;
+  position: absolute;
+  z-index: 3;
 }
 
 .slopeEnd {
-  right: -25%;
-  clip-path: polygon(70% 0, 100% 0, 80% 100%, 50% 100%);
+  right: -30%;
+  clip-path: polygon(96% 0, 100% 0, 80% 100%, 46% 100%);
   z-index: 1;
 }
 
-.pink {
-  background: linear-gradient(to right, deeppink 0%, coral 100%);
+/* .slopeEnd2 {
+  right: -25%;
+  clip-path: polygon(90% 0, 100% 0, 80% 100%, 50% 100%);
+  z-index: 1;
+} */
+
+.purple {
+  background: linear-gradient(to right, #f312fb 0%, #a21cfc 100%);
 }
 .teal {
-  background: linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%);
+  background: linear-gradient(to right, #08ebeb 0%, DeepSkyBlue 100%);
 }
 
 .number-layer {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease;
   position: absolute;
-  bottom: 8%;
-  right: 5%;
+  bottom: 5%;
+  right: 1%;
   font-size: 120px;
-  color: #cfcfcf77;
+  color: #cfcfcfa7;
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
   z-index: 3;
   pointer-events: none;
+}
+
+.selectedprojectbelowarea {
+display: flex;
+top: 10%;
+height: 17vh;
 }
