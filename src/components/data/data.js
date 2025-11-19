@@ -7,7 +7,7 @@ export const projects = [
     img_5: "/ProjectBG/FYP/bg-5.jpeg",
     name: "Automating Automata",
     description: "Developing an AI-powered system that generates and converts automata diagrams from text and image-based inputs, supporting ∈-NFA to DFA conversion, Pushdown Automata, Regular Expression to ε-NFA transformation, and DFA minimization using AI-based solutions. ",
-    techstack: ""
+    techstack: ["Spring Boot", "Angular", "React"]
   },
   {
     img_1: "/ProjectBG/OnlineDeliveryPortal/bg-1.jpg",

@@ -2,6 +2,26 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./Projects.css"
 import { projects } from "../../data/data.js"
 import * as motion from "motion/react-client"
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { SiPytorch, SiPython, SiNextdotjs, SiTailwindcss, SiVercel, SiGooglecloud, SiReact, SiNodedotjs, SiSpringboot, SiJava, SiMysql, SiCss3, SiAngular, SiExpress, SiMongodb, SiSocketdotio} from "react-icons/si";
+
+export const techStackIcons = [
+  { name: "PyTorch", icon: <SiPytorch /> },
+  { name: "Python", icon: <SiPython /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
+  { name: "Tailwind", icon: <SiTailwindcss /> },
+  { name: "Vercel", icon: <SiVercel /> },
+  { name: "Google Cloud Platform", icon: <SiGooglecloud /> },
+  { name: "React.js", icon: <SiReact /> },
+  { name: "Node.js", icon: <SiNodedotjs /> },
+  { name: "Spring Boot", icon: <SiSpringboot /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "CSS", icon: <SiCss3 /> },
+  { name: "Angular", icon: <SiAngular /> },
+  { name: "Express", icon: <SiExpress /> },
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "Socket.IO", icon: <SiSocketdotio /> },
+];
 
 function Projects() {
 
@@ -60,6 +80,7 @@ function Projects() {
     return () => el.removeEventListener('wheel', onWheel);
   }, []);
 
+  
   return (
     <>
     <section className='projects'>
@@ -97,8 +118,8 @@ function Projects() {
     <div className='right-selectedproject'>
     <div className='selectedproject'>
       <div className='selectedproject-images'>
-        <button className='img-btn left-btn' onClick={() => previousImage()}>←</button>
-        <button className='img-btn right-btn' onClick={() => nextImage()}>→</button>
+        <button className='img-btn left-btn' onClick={() => previousImage()}><ChevronLeft className="arrow-icon" size={28}/></button>
+        <button className='img-btn right-btn' onClick={() => nextImage()}><ChevronRight className="arrow-icon" size={28}/></button>
         {/* <img src={projects[projectIndex][`img_${selectedImage}`]} alt='not showing' /> */}
 
         {/* parallax layers container */}
@@ -127,7 +148,7 @@ function Projects() {
           {/* slopeEnd layer */}
           <motion.div
             className={`slopeEnd ${selectedImage % 2 === 0 ? 'teal' : 'purple'}`}
-            animate={{ x: [50, 0], opacity: [0, 1] }}
+            animate={{ x: [50, 0] }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             key={`end-${selectedImage}`}
           />
@@ -170,12 +191,19 @@ function Projects() {
         </div>
                
       </div>
+      <div className='selectedprojectbelowarea'>
       <div className='selectedproject-namedescription'> 
        <h3>{projects[projectIndex].name}</h3>  
        <p>{projects[projectIndex].description}</p>
       </div>
       <div className='selectedproject-techstack'>
-       <p>Tech stack: {projects[projectIndex].techstack}</p>     
+       <p>Tech stack:</p>   
+       {projects[projectIndex].techstack.map((techName) => {
+          const tech = techStackIcons.find(t => t.name === techName);
+          return tech ? <div key={techName}>{tech.icon}</div> : null;
+        })}
+          
+      </div>
       </div>
     </div>
     </div>
