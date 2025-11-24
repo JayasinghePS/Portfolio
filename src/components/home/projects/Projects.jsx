@@ -90,7 +90,7 @@ function Projects() {
     <div className='project-area-left'>
     <div className='lefttop-topic'>
      <h1 className='project-title'>Projects</h1>
-     <p>Welcome to my project space - a collection of ideas brought to life through code, design, and experimentation. Here you’ll find everything from research-driven builds to practical tools, each created to challenge my skills and explore new possibilities in technology.gggggggggggggggggggggg</p>
+     <p>Welcome to my project space - a collection of ideas brought to life through code, design, and experimentation. Here you’ll find everything from research-driven builds to practical tools, each created to challenge my skills and explore new possibilities in technology.ddddddddddddddddddd</p>
     </div>
     <div className='leftbottom-allprojects'>
     <div className='projectlist' ref={projectListRef}>
