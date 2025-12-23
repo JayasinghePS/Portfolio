@@ -161,10 +161,55 @@ margin-top: -5%;
 text-align: center;
 }
 
-.selectedproject-techstack{
+/* .selectedproject-techstack{
 height: 1%;
 width: 110%;
 margin-top: -2%;
+} */
+
+.selectedproject-techstack {
+  width: 110%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.selectedproject-techstack p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* container */
+.techstack-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* each tech */
+.techstack-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 13px;
+  color: #111;
+  cursor: default;
+  transition: all 0.25s ease;
+}
+
+.techstack-item svg {
+  font-size: 18px;
+}
+
+/* hover */
+.techstack-item:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .img-btn {
