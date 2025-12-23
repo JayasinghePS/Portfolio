@@ -7,7 +7,7 @@ export const projects = [
     img_5: "/ProjectBG/FYP/bg-5.jpeg",
     name: "Automating Automata",
     description: "Developing an AI-powered system that generates and converts automata diagrams from text and image-based inputs, supporting ∈-NFA to DFA conversion, Pushdown Automata, Regular Expression to ε-NFA transformation, and DFA minimization using AI-based solutions. ",
-    techstack: ["Spring Boot", "Angular", "React"]
+    techstack: ["PyTorch", "Python", "Next.js", "Tailwind", "Vercel", "Google Cloud Platform"]
   },
   {
     img_1: "/ProjectBG/OnlineDeliveryPortal/bg-1.jpg",
@@ -20,7 +20,7 @@ export const projects = [
     img_8: "/ProjectBG/OnlineDeliveryPortal/bg-8.jpg",
     name: "Online Delivery Portal",
     description: "As part of a software project, I contributed to the development of an online delivery portal for a laundry system. My specific role involved creating the homepage, implementing user and admin login authentication, and registering new users.",
-    techstack: ""
+    techstack: ["React.js", "Spring Boot", "Node.js", "MySQL", "CSS"]
   },
   {
     img_1: "/ProjectBG/SunTravel/bg-1.jpg",
@@ -28,7 +28,7 @@ export const projects = [
     img_3: "/ProjectBG/SunTravel/bg-3.jpg",
     name: "Sun Travel",
     description: "Developed a call center management system that enables agents to manage hotel contracts, check room availability, and handle customer inquiries efficiently.",
-    techstack: ""
+    techstack: ["Angular", "Spring Boot", "MySQL", "CSS"]
   },
   {
     img_1: "/ProjectBG/ZecretChatApp/bg-1.jpg",
@@ -41,7 +41,7 @@ export const projects = [
     img_8: "/ProjectBG/ZecretChatApp/b.jpg",
     name: "Zecret Chat App",
     description: "Developed a full-stack real-time chat application that allows users to send and receive messages with real-time message delivery",
-    techstack: ""
+    techstack: ["React.js", "Node.js", "Express", "MongoDB", "Socket.io", "Vercel"]
   },
   {
     img_1: "/ProjectBG/HardwareProject/bg-1.jpg",
@@ -49,6 +49,6 @@ export const projects = [
     img_3: "/ProjectBG/HardwareProject/bg-3.jpg",
     name: "Fruit Sorting Machine",
     description: "Efficiently sorts and cuts ripe fruits with precision, ensuring consistency in size and quality. Enhances the overall process while optimizing fruit freshness and minimizing waste. Designed the blueprint of the machine and the 3D model using Blender",
-    techstack: ""
+    techstack: ["Spring Boot", "Angular", "React"]
   },
 ]

@@ -14,6 +14,7 @@ export const techStackIcons = [
   { name: "Google Cloud Platform", icon: <SiGooglecloud /> },
   { name: "React.js", icon: <SiReact /> },
   { name: "Node.js", icon: <SiNodedotjs /> },
+  // { name: "Java", icon: <SiJava /> }, no such icon
   { name: "Spring Boot", icon: <SiSpringboot /> },
   { name: "MySQL", icon: <SiMysql /> },
   { name: "CSS", icon: <SiCss3 /> },
@@ -196,14 +197,30 @@ function Projects() {
        <h3>{projects[projectIndex].name}</h3>  
        <p>{projects[projectIndex].description}</p>
       </div>
-      <div className='selectedproject-techstack'>
+      {/* <div className='selectedproject-techstack'>
        <p>Tech stack:</p>   
        {projects[projectIndex].techstack.map((techName) => {
           const tech = techStackIcons.find(t => t.name === techName);
           return tech ? <div key={techName}>{tech.icon}</div> : null;
         })}
           
-      </div>
+      </div> */}
+
+      <div className="selectedproject-techstack">
+  <p>Tech stack</p>
+  <div className="techstack-list">
+    {projects[projectIndex].techstack.map((techName) => {
+      const tech = techStackIcons.find(t => t.name === techName);
+      return tech ? (
+        <div className="techstack-item" key={techName} title={techName}>
+          {tech.icon}
+          <span>{techName}</span>
+        </div>
+      ) : null;
+    })}
+  </div>
+</div>
+
       </div>
     </div>
     </div>
